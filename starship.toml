@@ -1,0 +1,83 @@
+format = """
+[](#11111b)\
+[  ](bg:#11111b fg:#cdd6f4)\
+[](bg:#313244 fg:#11111b)\
+$directory\
+[](fg:#313244 bg:#45475a)\
+$git_branch\
+$git_status\
+[](fg:#45475a bg:#585b70)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+$java\
+$ruby\
+[](fg:#585b70 bg:#1e1e2e)\
+$time\
+[](fg:#252537)\
+\n$character
+"""
+
+[directory]
+style = "fg:#f9e2af bg:#313244" # Yellow for directory text
+format = "[ $path ]($style)"
+truncation_length = 5
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#45475a"
+format = '[[ $symbol $branch ](fg:#fab387 bg:#45475a)]($style)' # Peach for Git branch
+
+[git_status]
+style = "bg:#45475a"
+format = '[[($all_status$ahead_behind )](fg:#fab387 bg:#45475a)]($style)' # Peach for Git status
+
+[nodejs]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#a6e3a1 bg:#585b70)]($style)' # Green for Node.js
+
+[rust]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#f38ba8 bg:#585b70)]($style)' # Red for Rust
+
+[golang]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#89b4fa bg:#585b70)]($style)' # Blue for Go
+
+[php]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#cba6f7 bg:#585b70)]($style)' # Mauve for PHP
+
+[python]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#b4befe bg:#585b70)]($style)' # Lavender for Python
+
+[java]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#94e2d5 bg:#585b70)]($style)' # Teal for Java
+
+[ruby]
+symbol = ""
+style = "bg:#585b70"
+format = '[[ $symbol ($version) ](fg:#f5c2e7 bg:#585b70)]($style)' # Pink for Ruby
+
+[time]
+disabled = false
+time_format = "%R" # Format Heure:Minute
+style = "bg:#1e1e2e"
+format = '[[  $time ](fg:#f2cdcd bg:#1e1e2e)]($style)' # Flamingo for time
